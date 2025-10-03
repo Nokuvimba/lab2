@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException, status
 from .schemas import User
 
 app = FastAPI() # create FastAPI instance
-users: list[User] = [] # in-memory list for users
+users: list[User] = [] # in-memory store for users
 
 
 # checking if the server is running
