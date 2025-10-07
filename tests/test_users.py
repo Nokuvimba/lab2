@@ -60,6 +60,7 @@ def test_update_user_then_404(client):
     r2 = client.put("/api/users/999", json=updated_user)
     assert r2.status_code == 404
  
+ #test for invalid email
 @pytest.mark.parametrize("bad_email", ["name@", "name@.com", "name", "name.com", "name@domain"])
 def test_bad_email_422(client, bad_email):
     r = client.post("/api/users", json=user_payload(uid=2, email=bad_email))
